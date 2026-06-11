@@ -256,7 +256,7 @@ a { color: inherit; }
   white-space: nowrap;
   padding-right: 28px;
 }
-.marquee span i { font-style: normal; color: var(--flare); padding-right: 28px; }
+.marquee span i { font-style: normal; color: var(--ink); opacity: 0.55; padding-right: 28px; }
 @keyframes scroll { to { transform: translateX(-50%); } }
 
 /* ── 区块标题 ─────────────────────────────────── */
@@ -334,6 +334,69 @@ a { color: inherit; }
 .feat.accent .tag { color: var(--lime); }
 .feat.accent .chip { background: rgba(252, 250, 243, 0.1); border-color: rgba(252, 250, 243, 0.25); color: var(--lime-soft); }
 .feat.accent .no { -webkit-text-stroke-color: rgba(252, 250, 243, 0.3); }
+
+/* ── 教练卡 ───────────────────────────────────── */
+.coach-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+.coach-card {
+  display: flex;
+  background: var(--card);
+  border: 2px solid var(--ink);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.coach-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 9px 0 rgba(33, 30, 22, 0.18);
+}
+.coach-fig {
+  flex: 0 0 42%;
+  margin: 0;
+  border-right: 1.6px solid var(--hair);
+  background: var(--paper2);
+}
+.coach-fig img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.coach-info { flex: 1; padding: 24px 22px 22px; display: flex; flex-direction: column; align-items: flex-start; }
+.coach-tag {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+.coach-card.ayao .coach-tag { color: var(--flare); }
+.coach-card.ran .coach-tag { color: var(--lime-deep); }
+.coach-info h3 { font-size: 24px; font-weight: 900; margin: 10px 0 2px; line-height: 1.2; }
+.coach-info h3 .en {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-left: 4px;
+}
+.coach-info > p { font-size: 14px; color: var(--ink-soft); margin-top: 6px; }
+.coach-chip {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--paper2);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 4px 10px;
+}
+.coach-card.ayao .coach-chip { background: var(--flare-soft); border-color: var(--flare); }
+.coach-card.ran .coach-chip { background: var(--lime-soft); border-color: var(--lime-deep); }
 
 /* ── 三步走 ───────────────────────────────────── */
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 2px solid var(--ink); border-radius: var(--r-lg); overflow: hidden; }
@@ -428,6 +491,75 @@ footer {
   gap: 8px;
 }
 
+/* ── 滚动动效 ─────────────────────────────────── */
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--lime), var(--lime-deep));
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/* 仅在 JS 可用且未要求减少动效时隐藏待显元素 */
+html.js:not(.no-anim) [data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+html.js:not(.no-anim) [data-reveal="left"] { transform: translateX(-44px); }
+html.js:not(.no-anim) [data-reveal="right"] { transform: translateX(44px); }
+html.js:not(.no-anim) [data-reveal].in { opacity: 1; transform: none; }
+/* hover 位移效果与 reveal 的 transform 过渡兼容 */
+html.js:not(.no-anim) .feat[data-reveal].in:hover,
+html.js:not(.no-anim) .coach-card[data-reveal].in:hover {
+  transform: translate(-3px, -3px);
+}
+
+/* 聊天气泡逐条出现 + 打字点 */
+html.js:not(.no-anim) .bubble {
+  transition: opacity 0.45s, transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+html.js:not(.no-anim) .bubble.hide {
+  opacity: 0;
+  transform: translateY(14px) scale(0.96);
+}
+.bubble.typing { width: 74px; }
+.dots { display: inline-flex; gap: 5px; align-items: center; height: 1em; }
+.dots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--muted);
+  animation: dotpulse 1s infinite ease-in-out;
+}
+.dots i:nth-child(2) { animation-delay: 0.16s; }
+.dots i:nth-child(3) { animation-delay: 0.32s; }
+@keyframes dotpulse {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.45; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+
+/* 教练立绘：悬停轻微放大 */
+.coach-fig { overflow: hidden; }
+.coach-fig img { transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.coach-card:hover .coach-fig img { transform: scale(1.05); }
+
+/* hero 中文标 · 轻微摇摆 */
+.hero .zh-mark { animation: bob 5s ease-in-out infinite; }
+@keyframes bob {
+  0%, 100% { transform: rotate(-2deg) translateY(-0.6em); }
+  50% { transform: rotate(1.4deg) translateY(-0.72em); }
+}
+
+/* 跑马灯悬停暂停 */
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
 /* ── 入场动画 ─────────────────────────────────── */
 @keyframes rise {
   from { opacity: 0; transform: translateY(22px); }
@@ -440,7 +572,7 @@ footer {
 .d4 { animation-delay: 0.44s; }
 
 @media (prefers-reduced-motion: reduce) {
-  .rise, .marquee-track { animation: none; }
+  .rise, .marquee-track, .hero .zh-mark, .dots i { animation: none; }
 }
 
 /* ── 法律文档页 ───────────────────────────────── */
@@ -494,6 +626,8 @@ footer {
 /* ── 响应式 ───────────────────────────────────── */
 @media (max-width: 760px) {
   .feat-grid { grid-template-columns: 1fr; }
+  .coach-grid { grid-template-columns: 1fr; }
+  .coach-fig { flex-basis: 38%; }
   .steps { grid-template-columns: 1fr; }
   .step { border-left: none; border-top: 1.6px solid var(--hair); }
   .step:first-child { border-top: none; }

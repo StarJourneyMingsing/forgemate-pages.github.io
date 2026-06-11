@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 </head>
 <body>
 
@@ -18,6 +19,7 @@
       <b>炼伴</b><span>FORGEMATE</span>
     </a>
     <nav class="nav">
+      <a href="#coaches">教练</a>
       <a href="#features">功能</a>
       <a href="#beta">测试版</a>
       <a href="legal/privacy.html">隐私政策</a>
@@ -43,9 +45,9 @@
       <div class="hero-note rise d3">iOS BETA · 名额有限 · 免费</div>
 
       <div class="stats rise d4">
-        <div class="stat"><div class="n">873<em>+</em></div><div class="l">动作库 · 中文检索</div></div>
-        <div class="stat"><div class="n">2</div><div class="l">教练人格 · 硬核 / 温柔</div></div>
-        <div class="stat"><div class="n">10–120</div><div class="l">分钟 · 单次时长自适应</div></div>
+        <div class="stat"><div class="n"><span data-count="873">873</span><em>+</em></div><div class="l">动作库 · 中文检索</div></div>
+        <div class="stat"><div class="n"><span data-count="2">2</span></div><div class="l">教练人格 · 硬核 / 温柔</div></div>
+        <div class="stat"><div class="n"><span data-count="10">10</span>–<span data-count="120">120</span></div><div class="l">分钟 · 单次时长自适应</div></div>
       </div>
     </div>
   </section>
@@ -61,11 +63,11 @@
   <!-- 对话演示 -->
   <section class="sec" id="demo">
     <div class="wrap">
-      <div class="sec-head">
+      <div class="sec-head" data-reveal>
         <span class="idx">01 / CHAT</span>
         <h2>和教练<mark>说句话</mark>，计划就排好了</h2>
       </div>
-      <div class="chat-demo">
+      <div class="chat-demo" data-reveal>
         <div class="bar"><i></i><i></i><i></i><b>COACH · AYAO</b></div>
         <div class="bubble user">今天只有 40 分钟，在家练</div>
         <div class="bubble coach">
@@ -84,36 +86,70 @@
     </div>
   </section>
 
+  <!-- 教练 -->
+  <section class="sec" id="coaches">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <span class="idx">02 / COACHES</span>
+        <h2>认识你的<mark>两位教练</mark></h2>
+      </div>
+      <div class="coach-grid">
+        <article class="coach-card ayao" data-reveal="left">
+          <figure class="coach-fig">
+            <img src="assets/img/coach-ayao.jpg" alt="AI 教练阿曜的形象插画：手持平板的健硕男教练" loading="lazy">
+          </figure>
+          <div class="coach-info">
+            <div class="coach-tag">PERSONA 01 · HARDCORE</div>
+            <h3>阿曜 <span class="en">YAO</span></h3>
+            <p>可靠、直接、执行力强。像训练搭子一样推你完成计划，但不制造压迫感。</p>
+            <span class="coach-chip">🔥 力量与计划</span>
+          </div>
+        </article>
+        <article class="coach-card ran" data-reveal="right">
+          <figure class="coach-fig">
+            <img src="assets/img/coach-xiaoran.jpg" alt="AI 教练小然的形象插画：手持平板、竖起大拇指的女教练" loading="lazy">
+          </figure>
+          <div class="coach-info">
+            <div class="coach-tag">PERSONA 02 · GENTLE</div>
+            <h3>小然 <span class="en">RAN</span></h3>
+            <p>清爽、坚定、会照顾状态。适合节奏管理、习惯养成和灵活调整训练。</p>
+            <span class="coach-chip">🌿 节奏与陪伴</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- 功能 -->
   <section class="sec" id="features">
     <div class="wrap">
-      <div class="sec-head">
-        <span class="idx">02 / FEATURES</span>
+      <div class="sec-head" data-reveal>
+        <span class="idx">03 / FEATURES</span>
         <h2>不止聊天，<mark>真的帮你练</mark></h2>
       </div>
-      <div class="feat-grid">
-        <article class="feat">
+      <div class="feat-grid" data-stagger>
+        <article class="feat" data-reveal>
           <div class="no">01</div>
           <div class="tag">PLAN · CALENDAR</div>
           <h3>对话即排课</h3>
           <p>训练计划直接落进日历：逐组目标次数与重量，按你的训练日自动安排，改一句话就重排。</p>
           <span class="chip">📅 周视图 · 逐组明细</span>
         </article>
-        <article class="feat accent">
+        <article class="feat accent" data-reveal>
           <div class="no">02</div>
           <div class="tag">LOG · ONE TAP</div>
           <h3>打勾即完成</h3>
           <p>勾选完成这一组；实际次数和重量点击数字直接改，像训记一样顺手，不打断训练节奏。</p>
           <span class="chip">✓ 逐组打卡 · 实际 vs 目标</span>
         </article>
-        <article class="feat">
+        <article class="feat" data-reveal>
           <div class="no">03</div>
           <div class="tag">PERSONA · ×2</div>
           <h3>两种教练人格</h3>
           <p>阿曜硬核直给，小然温柔鼓励。每段对话记住自己的教练，语气始终一致。</p>
           <span class="chip">🔥 阿曜 · 🌿 小然</span>
         </article>
-        <article class="feat">
+        <article class="feat" data-reveal>
           <div class="no">04</div>
           <div class="tag">PROFILE · AWARE</div>
           <h3>懂你的偏好</h3>
@@ -127,22 +163,22 @@
   <!-- 三步走 -->
   <section class="sec" id="how">
     <div class="wrap">
-      <div class="sec-head">
-        <span class="idx">03 / START</span>
+      <div class="sec-head" data-reveal>
+        <span class="idx">04 / START</span>
         <h2>三步<mark>开练</mark></h2>
       </div>
-      <div class="steps">
-        <div class="step">
+      <div class="steps" data-stagger>
+        <div class="step" data-reveal>
           <div class="sno">STEP 01</div>
           <h3>注册账号</h3>
           <p>用户名 + 密码，10 秒搞定。数据云端同步，换机不丢。</p>
         </div>
-        <div class="step">
+        <div class="step" data-reveal>
           <div class="sno">STEP 02</div>
           <h3>填好资料</h3>
           <p>身高体重、目标与偏好。填得越全，教练越懂你（也可以跳过慢慢补）。</p>
         </div>
-        <div class="step">
+        <div class="step" data-reveal>
           <div class="sno">STEP 03</div>
           <h3>开口要计划</h3>
           <p>「帮我排本周训练」——剩下的交给教练。打卡、调整、复盘,一个 App 闭环。</p>
@@ -154,7 +190,7 @@
   <!-- Beta -->
   <section class="sec" id="beta">
     <div class="wrap">
-      <div class="beta">
+      <div class="beta" data-reveal>
         <div>
           <h2>iOS Beta 内测进行中</h2>
           <p>通过 TestFlight 参与测试，你的每一条反馈都会塑造正式版。名额有限，先到先得。</p>
