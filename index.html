@@ -21,6 +21,7 @@
     <nav class="nav">
       <a href="#coaches">教练</a>
       <a href="#features">功能</a>
+      <a href="#faq">FAQ</a>
       <a href="#beta">测试版</a>
       <a href="legal/privacy.html">隐私政策</a>
       <a class="cta" href="#beta">加入 Beta</a>
@@ -31,7 +32,12 @@
 <main>
   <!-- Hero -->
   <section class="hero">
-    <div class="wrap">
+    <div class="wrap hero-wrap">
+      <div class="hero-coaches rise d2" aria-hidden="true">
+        <img class="hc hc-ayao" src="assets/img/coach-ayao.jpg" alt="">
+        <img class="hc hc-ran" src="assets/img/coach-xiaoran.jpg" alt="">
+        <span class="hc-tag">两位 AI 教练 · 在线</span>
+      </div>
       <div class="kicker rise">YOUR PRIVATE COACH · AI 私教</div>
       <h1 class="rise d1">FORGE<br><span class="hollow">MATE</span><span class="zh-mark">炼伴</span></h1>
       <p class="lead rise d2">
@@ -120,11 +126,35 @@
     </div>
   </section>
 
+  <!-- 真实界面 -->
+  <section class="sec" id="screens">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <span class="idx">03 / SCREENS</span>
+        <h2>真实界面，<mark>不放概念图</mark></h2>
+      </div>
+      <div class="shot-grid" data-stagger>
+        <figure class="phone" data-reveal>
+          <img src="assets/img/app-chat.jpg" alt="App 聊天页截图：向阿曜要本周计划，AI 回复已排好 2 个训练日、12 个动作" loading="lazy">
+          <figcaption><span class="ptag">CHAT</span>一句话，计划排好</figcaption>
+        </figure>
+        <figure class="phone mid" data-reveal>
+          <img src="assets/img/app-plan.jpg" alt="App 计划页截图：日历视图与杠铃深蹲逐组打卡，目标 8 次 × 40kg" loading="lazy">
+          <figcaption><span class="ptag">PLAN</span>逐组打卡，点勾即完成</figcaption>
+        </figure>
+        <figure class="phone" data-reveal>
+          <img src="assets/img/app-profile.jpg" alt="App 个人设置页截图：身体数据、BMI 自动计算与双教练形象选择" loading="lazy">
+          <figcaption><span class="ptag">PROFILE</span>资料与教练，随时可换</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- 功能 -->
   <section class="sec" id="features">
     <div class="wrap">
       <div class="sec-head" data-reveal>
-        <span class="idx">03 / FEATURES</span>
+        <span class="idx">04 / FEATURES</span>
         <h2>不止聊天，<mark>真的帮你练</mark></h2>
       </div>
       <div class="feat-grid" data-stagger>
@@ -160,11 +190,54 @@
     </div>
   </section>
 
+  <!-- 动作库 -->
+  <section class="sec" id="library">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <span class="idx">05 / LIBRARY</span>
+        <h2>873 个动作，<mark>都给你分好了</mark></h2>
+      </div>
+      <div class="lib-grid">
+        <div class="lib-bars" data-stagger>
+          <div class="lib-bar" data-reveal><span class="m">股四头 · 腿</span><i><b style="--w:100%"></b></i><span class="c">148</span></div>
+          <div class="lib-bar" data-reveal><span class="m">肩部</span><i><b style="--w:86%"></b></i><span class="c">127</span></div>
+          <div class="lib-bar" data-reveal><span class="m">腹部核心</span><i><b style="--w:63%"></b></i><span class="c">93</span></div>
+          <div class="lib-bar" data-reveal><span class="m">胸部</span><i><b style="--w:57%"></b></i><span class="c">84</span></div>
+          <div class="lib-bar" data-reveal><span class="m">腘绳肌 · 后链</span><i><b style="--w:53%"></b></i><span class="c">79</span></div>
+          <div class="lib-bar" data-reveal><span class="m">肱三头</span><i><b style="--w:48%"></b></i><span class="c">71</span></div>
+          <div class="lib-bar" data-reveal><span class="m">肱二头</span><i><b style="--w:36%"></b></i><span class="c">53</span></div>
+          <div class="lib-bar" data-reveal><span class="m">背阔肌</span><i><b style="--w:26%"></b></i><span class="c">38</span></div>
+          <p class="lib-note" data-reveal>… 还有中背、小腿、臀、前臂等 9 个肌群共 180 个动作</p>
+        </div>
+        <aside class="lib-side" data-reveal="right">
+          <div class="lib-block">
+            <div class="lib-label">器械覆盖</div>
+            <div class="lib-chips">
+              <span class="chip">🏋️ 杠铃 170</span><span class="chip">🔩 哑铃 123</span><span class="chip">🤸 自重 188</span><span class="chip">🪢 绳索 81</span><span class="chip">⚙️ 固定器械 67</span><span class="chip">🫖 壶铃 53</span>
+            </div>
+          </div>
+          <div class="lib-block">
+            <div class="lib-label">难度分布</div>
+            <div class="lib-level">
+              <i class="l1" style="flex:523" title="新手 523"></i><i class="l2" style="flex:293" title="进阶 293"></i><i class="l3" style="flex:57" title="高手 57"></i>
+            </div>
+            <div class="lib-legend">
+              <span><i class="l1"></i>新手 523</span>
+              <span><i class="l2"></i>进阶 293</span>
+              <span><i class="l3"></i>高手 57</span>
+            </div>
+          </div>
+          <p class="lib-tip">全部支持中文检索，教练排课时按你的<b>场地与器械</b>自动筛选。</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
   <!-- 三步走 -->
   <section class="sec" id="how">
     <div class="wrap">
       <div class="sec-head" data-reveal>
-        <span class="idx">04 / START</span>
+        <span class="idx">06 / START</span>
         <h2>三步<mark>开练</mark></h2>
       </div>
       <div class="steps" data-stagger>
@@ -183,6 +256,42 @@
           <h3>开口要计划</h3>
           <p>「帮我排本周训练」——剩下的交给教练。打卡、调整、复盘,一个 App 闭环。</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec" id="faq">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <span class="idx">07 / FAQ</span>
+        <h2>你可能想问的</h2>
+      </div>
+      <div class="faq-list" data-stagger>
+        <details class="faq-item" data-reveal>
+          <summary><span class="q">Q1</span>测试版要花钱吗？<i class="plus"></i></summary>
+          <div class="a">TestFlight 内测阶段完全免费。正式版的定价还在规划中，参与内测的用户会优先拿到福利。</div>
+        </details>
+        <details class="faq-item" data-reveal>
+          <summary><span class="q">Q2</span>怎么加入内测？<i class="plus"></i></summary>
+          <div class="a">点击页面上的「邮件申请测试资格」，告诉我们你的 Apple ID 邮箱，我们会发出 TestFlight 邀请链接，点开安装即可。</div>
+        </details>
+        <details class="faq-item" data-reveal>
+          <summary><span class="q">Q3</span>需要什么设备？有安卓版吗？<i class="plus"></i></summary>
+          <div class="a">内测期先支持 iPhone（通过 TestFlight 安装）。安卓版本在路线图上，上线后会第一时间通知内测用户。</div>
+        </details>
+        <details class="faq-item" data-reveal>
+          <summary><span class="q">Q4</span>我的身体数据安全吗？<i class="plus"></i></summary>
+          <div class="a">身高体重等资料仅用于生成你的训练建议，云端同步、不对外共享。详见<a href="legal/privacy.html">隐私政策</a>。</div>
+        </details>
+        <details class="faq-item" data-reveal>
+          <summary><span class="q">Q5</span>没有健身基础也能用吗？<i class="plus"></i></summary>
+          <div class="a">可以。告诉教练你是新手，计划会从低强度、低门槛的动作开始，循序渐进。动作库里超过一半的动作是新手友好的。</div>
+        </details>
+        <details class="faq-item" data-reveal>
+          <summary><span class="q">Q6</span>AI 排的计划靠谱吗？<i class="plus"></i></summary>
+          <div class="a">计划基于你的身体数据、目标与器械条件生成，任何一处不合适都可以一句话调整。训练有风险，身体不适请及时停止并咨询专业人士。</div>
+        </details>
       </div>
     </div>
   </section>
