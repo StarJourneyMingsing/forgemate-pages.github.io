@@ -252,22 +252,31 @@ a { color: inherit; }
   font-family: var(--display);
   font-size: 22px;
   letter-spacing: 0.06em;
+  word-spacing: 1.8em;
   text-transform: uppercase;
   white-space: nowrap;
-  padding-right: 28px;
+  padding-right: 1.8em;
 }
-.marquee span i { font-style: normal; color: var(--ink); opacity: 0.55; padding-right: 28px; }
 @keyframes scroll { to { transform: translateX(-50%); } }
 
 /* ── 区块标题 ─────────────────────────────────── */
 .sec { padding: 30px 0 70px; }
-.sec-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 36px; }
+.sec-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  gap: 16px;
+  margin-bottom: 36px;
+}
 .sec-head .idx {
   font-family: var(--mono);
   font-size: 12px;
   color: var(--flare);
   letter-spacing: 0.2em;
+  white-space: nowrap;
+  flex: none;
 }
+.sec-head h2 { min-width: 0; }
 .sec-head h2 {
   font-family: var(--zh);
   font-weight: 900;
